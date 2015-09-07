@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	div.container
+		div.row
+			div.col-sm-6.col-md-4.col-md-offset-4
+				form(class='form-signin', action='/item/add', method='POST')
+					input(type='text', name='item_name', class='form-control', placeholder='Product Name (required)',required, autofocus)
+					input(type='number', name='amount', class='form-control',placeholder='Amount (required)', required)
+					textarea(name='descp',placeholder='Description if Any',class='form-control')
+					input(type='hidden',name='user_id', value='#{user._id}')
+					input(type='hidden',name='username', value='#{user.username}')
+					br
+					button(class='btn btn-lg btn-primary btn-block', type='submit') Submit
+					span.clearfix
+				p.
+				text-center please double check once saved you can't update. 
+				a(href='/') Back
+

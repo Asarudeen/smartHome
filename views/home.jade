@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	div.container
+		div.row
+			div.col-sm-6.col-md-4.col-md-offset-4
+				#user
+					h1.text-center.login-title Login successfull:
+						br
+						br
+						a(href='/item/create') Add Item
+						br
+						a(href='/signout', class='text-center new-account') Sign Out
+						br
+						a(href='/item/sendmail', class='text-center new-account') Mail

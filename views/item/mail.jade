@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	div.container
+		h3 Mail send successfully, receivers
+		if emails
+			ul
+				for email in emails
+					li: p #{email}

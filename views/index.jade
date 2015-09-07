@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	div.container
+		div.row
+			nav.navbar.navbar-default
+				div.container
+					ul.nav.nav-pills.pull-right.myMenu
+						li: a(href='/item/create',class='') Add Item
+						li: a(href='/item/sendmail',class='') Send Mail
+			table.col-sm-8.col-md-12.table.table-striped.table-bordered
+				tbody
+					tr
+						th Date
+						th Item
+						th Buyed By
+						th Amount
+					if items
+						for item in items
+							tr(title=item.descp)
+								td #{item.created_date}
+								td #{item.item_name}
+								td #{item.username}
+								td #{item.amount}
+						else
+							tr
+								td.text-center(colspan='4') sorry, no items in this month
